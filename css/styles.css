@@ -1,16 +1,340 @@
 * {
   text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+  overflow-x: hidden;
 }
 
-.open-sans-font {
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
+/* General Styles */
+.name {
+  font-size: 2em;
+  margin-top: 10px;
+}
+
+.portfolioIntro {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .proyecto {
-  width: 350px;
-  height: 250px;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.proyecto:hover {
+  transform: scale(1.05);
+}
+
+.downloadCV {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.downloadCV:hover {
+  transform: scale(1.05);
+  background-color: #333;
+}
+
+.profilepic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project {
+  margin-top: 30px;
+  padding: 10px;
+  border: 1px solid #1a1919;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.project:hover {
+  transform: scale(1.05);
+}
+
+#skills ul {
+  margin-top: 10px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#skills ul li {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #333;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#skills ul li:hover {
+  background-color: #555;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#skills ul li i {
+  font-size: 1.5em;
+}
+
+header {
+  background-color: #000000;
+  font-size: 18px;
+  color: white;
+  padding: 10px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #ddd;
+}
+
+section {
+  padding: 20px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#about {
+  background: linear-gradient(#000000 30%, #131313 90%);
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  color: white;
+  margin-top: auto;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+#projects {
+  background-color: #000000;
+}
+
+#skills {
+  background-color: #000000;
+}
+
+#contact {
+  background-color: #000000;
+  padding: 40px 20px;
+}
+
+#contact h2 {
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#contact form label {
+  align-self: flex-start;
+  font-weight: bold;
+  margin-bottom: -10px;
+}
+
+#contact form input,
+#contact form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #1a1a1a;
+  color: white;
+  font-size: 1em;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#contact form input:focus,
+#contact form textarea:focus {
+  border-color: #555;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+#contact form button {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#contact form button:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+#contact .socials {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#contact .socials a {
+  color: white;
+  font-size: 2em;
+  transition: color 0.3s, transform 0.3s;
+}
+
+#contact .socials a:hover {
+  color: #ddd;
+  transform: translateY(-5px);
+}
+
+#contact p {
+  margin-top: 20px;
+  font-size: 1.1em;
+}
+
+#contact p a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#contact p a:hover {
+  color: white;
+}
+
+footer {
+  background-color: #000000;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .name {
+    font-size: 1.5em;
+  }
+
+  .portfolioIntro {
+    font-size: 0.9em;
+  }
+
+  .proyecto {
+    width: 100%;
+    height: auto;
+  }
+
+  .project {
+    margin-top: 20px;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header nav ul li {
+    margin: 10px 0;
+  }
+
+  #skills ul li {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+
+  #contact form {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 1.2em;
+  }
+
+  .portfolioIntro {
+    font-size: 0.8em;
+  }
+
+  .downloadCV {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+
+  .profilepic {
+    width: 120px;
+    height: 120px;
+  }
+
+  #skills ul li {
+    padding: 6px 12px;
+    font-size: 0.8em;
+  }
+
+  #contact h2 {
+    font-size: 1.5em;
+  }
+
+  #contact form input,
+  #contact form textarea {
+    font-size: 0.9em;
+  }
+
+  #contact form button {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+
+  #contact .socials a {
+    font-size: 1.5em;
+  }
+
+  #contact p {
+    font-size: 1em;
+  }
 }

@@ -9,6 +9,26 @@
 
 </head>
 <body>
+    <div class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <div class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-socials">
+            <a target="_blank" href="https://github.com/xXAlanbritoXx/"><i class="devicon-github-original"></i></a>
+            <a target="_blank" href="https://www.linkedin.com/in/kevin-alan-ochoa-ochoa-8607b6303/"><i class="devicon-linkedin-plain"></i></a>
+        </div>
+    </div>
     <header>
         <nav>
             <ul>
@@ -101,5 +121,31 @@
     <footer>
         <p>&copy; 2025 My Portfolio</p>
     </footer>
+    
+    <script>
+        const hamburger = document.querySelector('.hamburger-menu');
+        const sidebar = document.querySelector('.sidebar');
+        
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            
+            // Animate hamburger to X
+            const bars = document.querySelectorAll('.bar');
+            bars[0].style.transform = sidebar.classList.contains('active') ? 'rotate(45deg) translate(6px, 6px)' : '';
+            bars[1].style.opacity = sidebar.classList.contains('active') ? '0' : '1';
+            bars[2].style.transform = sidebar.classList.contains('active') ? 'rotate(-45deg) translate(6px, -6px)' : '';
+        });
+
+        // Close sidebar when clicking a link
+        document.querySelectorAll('.sidebar a').forEach(link => {
+            link.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+                const bars = document.querySelectorAll('.bar');
+                bars[0].style.transform = '';
+                bars[1].style.opacity = '1';
+                bars[2].style.transform = '';
+            });
+        });
+    </script>
 </body>
 </html>
